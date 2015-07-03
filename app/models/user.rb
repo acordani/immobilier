@@ -21,6 +21,7 @@
 #  name                   :string
 #  token                  :string
 #  token_expiry           :datetime
+#  admin                  :boolean          default(FALSE), not null
 #
 # Indexes
 #

@@ -3,7 +3,7 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700|Raleway:300,400");
-$base-font: "Open Sans", "Helvetica", "sans-serif";
+$base-font: "avenir_lt_std95_black", "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Montserrat", "sans-serif";
 $navbar-font: 'Raleway', "sans-serif";
 
@@ -31,6 +31,7 @@ $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
 $purple: #6452BD;
+$grey-h3: #a9abac;
 
 // Gray scale
 $gray-darker:  lighten(#000, 13.5%); // #222
