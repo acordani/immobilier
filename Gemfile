@@ -33,7 +33,7 @@ gem "rails-i18n"
 gem "devise-i18n"
 gem "devise-i18n-views"
 
-gem "rails-assets-underscore"
+
 gem 'coffee-rails', '~> 4.1.0'
 
 group :development, :test do
