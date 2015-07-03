@@ -284,6 +284,7 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    underscore-rails (1.8.3)
     unicode_utils (1.4.0)
     warden (1.2.3)
       rack (>= 1.0)
@@ -327,6 +328,7 @@ DEPENDENCIES
   simple_form
   spring
   uglifier
+  underscore-rails (~> 1.8.3)
 
 BUNDLED WITH
    1.10.5

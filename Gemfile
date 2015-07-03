@@ -22,7 +22,8 @@ gem "font-awesome-sass"
 
 gem "geocoder"
 gem "gmaps4rails"
-gem "rails-assets-underscore"
+# gem "rails-assets-underscore"
+gem 'underscore-rails', '~> 1.8.3'
 
 gem 'owlcarousel-rails'
 
