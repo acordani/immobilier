@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703095358) do
+ActiveRecord::Schema.define(version: 20150703100546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,27 @@ ActiveRecord::Schema.define(version: 20150703095358) do
     t.string   "floor_max"
     t.boolean  "elevator"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "property_id"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "picture1_file_name"
+    t.string   "picture1_content_type"
+    t.integer  "picture1_file_size"
+    t.datetime "picture1_updated_at"
+    t.string   "picture2_file_name"
+    t.string   "picture2_content_type"
+    t.integer  "picture2_file_size"
+    t.datetime "picture2_updated_at"
+    t.string   "picture3_file_name"
+    t.string   "picture3_content_type"
+    t.integer  "picture3_file_size"
+    t.datetime "picture3_updated_at"
+    t.string   "picture4_file_name"
+    t.string   "picture4_content_type"
+    t.integer  "picture4_file_size"
+    t.datetime "picture4_updated_at"
   end
 
   add_index "announces", ["user_id"], name: "index_announces_on_user_id", using: :btree
