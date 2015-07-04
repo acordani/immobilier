@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704162944) do
+ActiveRecord::Schema.define(version: 20150704192926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,13 +88,6 @@ ActiveRecord::Schema.define(version: 20150704162944) do
   add_index "announces", ["cached_weighted_score"], name: "index_announces_on_cached_weighted_score", using: :btree
   add_index "announces", ["cached_weighted_total"], name: "index_announces_on_cached_weighted_total", using: :btree
   add_index "announces", ["user_id"], name: "index_announces_on_user_id", using: :btree
-
-  create_table "favorite_announces", force: :cascade do |t|
-    t.integer  "announce_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
