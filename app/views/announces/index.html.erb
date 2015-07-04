@@ -1,7 +1,7 @@
 <div class="padded">
-<% if @announces.exists? %>
-  <h4 class="text-center">Nous avons trouvé <%= @announces.select { |f| f.pictures.exists? }.count %> propriété(s) à vendre correspondant à votre recherche</h4>
-<% end %>
+
+  <h4 class="text-center">Nous avons trouvé <%= @announces.select { |f| f.picture1.exists? }.count %> propriété(s) à vendre correspondant à votre recherche</h4>
+
 
 
 <div class="container">
@@ -11,7 +11,7 @@
 
       <% if @announces.exists? %>
 
-          <% @announces.select { |f| f.pictures.exists? }.each do |t| %>
+          <% @announces.select { |f| f.picture1.exists? }.each do |t| %>
             <%= render "shared/cart", announce: t %>
           <% end %>
 
