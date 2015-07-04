@@ -3,7 +3,7 @@
 
 
     <div class="row">
-      <%= simple_form_for(@announce, html: { multipart: true }) do |f| %>
+      <%= simple_form_for(@announce, url: @announce.new_record? ? account_announces_path : account_announce_path(@announce), html: { multipart: true }) do |f| %>
 
         <div class="col-md-6">
           <label>
