@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703151306) do
+ActiveRecord::Schema.define(version: 20150704162944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20150703151306) do
     t.string   "floor_max"
     t.boolean  "elevator"
     t.integer  "user_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "property_id"
     t.float    "latitude"
     t.float    "longitude"
@@ -71,9 +71,41 @@ ActiveRecord::Schema.define(version: 20150703151306) do
     t.string   "picture4_content_type"
     t.integer  "picture4_file_size"
     t.datetime "picture4_updated_at"
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
   end
 
+  add_index "announces", ["cached_votes_down"], name: "index_announces_on_cached_votes_down", using: :btree
+  add_index "announces", ["cached_votes_score"], name: "index_announces_on_cached_votes_score", using: :btree
+  add_index "announces", ["cached_votes_total"], name: "index_announces_on_cached_votes_total", using: :btree
+  add_index "announces", ["cached_votes_up"], name: "index_announces_on_cached_votes_up", using: :btree
+  add_index "announces", ["cached_weighted_average"], name: "index_announces_on_cached_weighted_average", using: :btree
+  add_index "announces", ["cached_weighted_score"], name: "index_announces_on_cached_weighted_score", using: :btree
+  add_index "announces", ["cached_weighted_total"], name: "index_announces_on_cached_weighted_total", using: :btree
   add_index "announces", ["user_id"], name: "index_announces_on_user_id", using: :btree
+
+  create_table "favorite_announces", force: :cascade do |t|
+    t.integer  "announce_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "favorited_id"
+    t.string   "favorited_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "favorites", ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "properties", force: :cascade do |t|
     t.string   "name"
@@ -106,5 +138,21 @@ ActiveRecord::Schema.define(version: 20150703151306) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "votes", force: :cascade do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.integer  "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
+
   add_foreign_key "announces", "users"
+  add_foreign_key "favorites", "users"
 end
