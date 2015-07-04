@@ -9,7 +9,7 @@
     <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
     <div class="list-group">
 
-      <% if @announces.exists? %>
+      <% if @announces != nil %>
 
           <% @announces.select { |f| f.picture1.exists? }.each do |t| %>
             <%= render "shared/cart", announce: t %>
