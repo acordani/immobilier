@@ -18,7 +18,7 @@ Property.create(name: "Local Commercial")
 
 
 # puts "Creating Announces"
-# Announce.create(title: "Belle Maison", bed: 3, bath: 1, surface: 120, construction: 1930, description: "Belle Maison sur Saint Maur Des Fossés")
+# Announce.create(title: "Belle Maison", bed: 3, bath: 1, surface: 120, construction: 1930, property_id: 1, description: "Belle Maison sur Maisons-Alfort", address: "98 Avenue du Général Leclerc, Maisons-Alfort, France", locality: "Maisons-Alfort", latitude: 48.8029551, longitude: 2.4417096, picture1:"http://lorempixel.com/640/480/city/1/")
 
 
 puts "Done !"
