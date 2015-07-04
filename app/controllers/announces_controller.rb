@@ -16,7 +16,7 @@ class AnnouncesController < ApplicationController
       @announces = Announce.all
     end
 
-    @announces = Announce.search(params[:search])
+    # @announces = Announce.search(params[:search])
 
 
 

@@ -1,5 +1,7 @@
 <div class="padded">
-<h4 class="text-center">Nous avons trouvé <%= @announces.select { |f| f.pictures.exists? }.count %> propriété(s) à vendre correspondant à votre recherche</h4>
+<% if @announces.exists? %>
+  <h4 class="text-center">Nous avons trouvé <%= @announces.select { |f| f.pictures.exists? }.count %> propriété(s) à vendre correspondant à votre recherche</h4>
+<% end %>
 
 
 <div class="container">
