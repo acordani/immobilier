@@ -10,6 +10,7 @@
 
       <% if @announces.count >= 1 %>
 
+
           <% @announces.select { |f| f.picture1.exists? }.each do |t| %>
             <%= render "shared/cart", announce: t %>
           <% end %>

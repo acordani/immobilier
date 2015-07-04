@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :announces
   # resources :wicked, only: [:create, :show, :update]
-  resources :searches
+  # resources :searches
 end
