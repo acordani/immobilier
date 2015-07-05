@@ -107,44 +107,43 @@
           </label>
         </div>
 
-              <div class="col-md-3">
-              <label>
-                autre photo
-                <%= f.file_field :picture2, class: 'filestyle',
-                  :'data-classButton' => 'btn btn-primary',
-                  :'data-input' => 'false',
-                  :'data-buttonText' => 'Ajouter une photo'  %>
-                </label>
-              </div>
+        <div class="col-md-3">
+          <label>
+            2eme photo
+            <%= f.file_field :picture2, class: 'filestyle',
+            :'data-classButton' => 'btn btn-primary',
+            :'data-input' => 'false',
+            :'data-buttonText' => 'Ajouter une photo'  %>
+          </label>
+        </div>
 
-              <div class="col-md-3">
-              <label>
-                autre photo
-                <%= f.file_field :picture3, class: 'filestyle',
-                  :'data-classButton' => 'btn btn-primary',
-                  :'data-input' => 'false', classIcon:  'icon-plus',
-                  :'data-buttonText' => 'Ajouter une photo'  %>
-                  </label>
-              </div>
+        <div class="col-md-3">
+          <label>
+            3eme photo
+            <%= f.file_field :picture3, class: 'filestyle',
+            :'data-classButton' => 'btn btn-primary',
+            :'data-input' => 'false', classIcon:  'icon-plus',
+            :'data-buttonText' => 'Ajouter une photo'  %>
+          </label>
+        </div>
 
-              <div class="col-md-3">
-              <label>
-                4eme photo
-                <%= f.file_field :picture4, class: 'filestyle',
-                  :'data-classButton' => 'btn btn-primary',
-                  :'data-input' => 'false', classIcon:  'icon-plus',
-                  :'data-buttonText' => 'Ajouter une photo'  %>
-              </div>
+        <div class="col-md-3">
+          <label>
+            4eme photo
+            <%= f.file_field :picture4, class: 'filestyle',
+            :'data-classButton' => 'btn btn-primary',
+            :'data-input' => 'false', classIcon:  'icon-plus',
+            :'data-buttonText' => 'Ajouter une photo'  %>
+          </label>
+        </div>
+        <div class="col-md-12">
+          <div class="mt-40"></div>
+        </div>
+        <div class="col-submit">
+          <button type="submit">Submit</button>
+        </div>
 
-
-
-
-
-  <div class="col-submit">
-    <button type="submit">Submit</button>
+      <% end %>
+    </div>
   </div>
-
-<% end %>
-  </div>
-
 </div>
