@@ -5,6 +5,7 @@
 //= require owl.carousel
 //= require gmaps/google
 //= require bootstrap-filestyle
+//= require navbar
 //= require_tree .
 //= require_tree ./app
 

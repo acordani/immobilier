@@ -9,7 +9,7 @@ $navbar-text-transform: capitalize;
 $navbar-font-weight: 300;
 $navbar-letter-spacing: 1.5px;
 $navbar-font-family: $navbar-font;
-$navbar-bg: transparent;
+$navbar-bg: white;
 
 /* -------------------------------------
  * Box model
@@ -40,7 +40,8 @@ $navbar-profile-border-width: 2px;
  * SCSS code
  * ------------------------------------- */
 .navbar-wagon {
-  background: transparent;
+  background: white;
+  color: #3B5675;
   font-family: $navbar-font-family;
   border: none;
   font-size: $navbar-font-size;
@@ -52,11 +53,21 @@ $navbar-profile-border-width: 2px;
   // border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
   min-height: 0;
   transition: background 0.4s ease;
-  position: absolute;
+  // position: absolute;
+  position: fixed;
   z-index: 100;
   width: 100%;
   background: #white;
   border-bottom: 0px solid #3A5E3D;
+
+    &.transparent {
+    background: transparent;
+    border: none;
+  }
+
+    &.color {
+    color:white;
+    }
 
   .navbar-nav > li > a,
   .navbar-nav > .open > a,
