@@ -34,12 +34,14 @@
     </div>
   </div>
 </div>
-<div class="line-separator"> </div>
-<div class="map hidden-xs">
-  <!-- <p class="btn mt-20 btn-map ouvre"> Ouvrir la carte </p> -->
-  <!-- <p class="btn mt-20 btn-map ferme"> Fermer la carte </p> -->
-  <div id="map2"class="map_small"></div>
-</div>
+<% if @announces.count >=1 %>
+  <div class="line-separator"> </div>
+  <div class="map hidden-xs">
+    <!-- <p class="btn mt-20 btn-map ouvre"> Ouvrir la carte </p> -->
+    <!-- <p class="btn mt-20 btn-map ferme"> Fermer la carte </p> -->
+    <div id="map2"class="map_small"></div>
+  </div>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="announces mt-50">
@@ -67,7 +69,7 @@
         <div class="mb-40 mise_en_forme">
         <h2 class="mb-20"> Vendeurs, il est temps de passez la seconde.</h2>
         <h4 class="mb-30"> Mettez votre annonce gratuitement sur notre site </h4>
-        <%= link_to "Créer votre annonce", new_account_announce_path, class:"btn btn-new mt-20" %>
+        <%= link_to "Publiez votre annonce", new_account_announce_path, class:"btn btn-new mt-20" %>
       </div>
 
     </div>
@@ -86,7 +88,7 @@
     $(document).on('ready', function() {
 
       handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map2' },  provider: { styles: mapStyle }
+      handler.buildMap({ internal: { id: 'map2' },  provider: { styles: mapStyle}
       }, function(){
         markers = handler.addMarkers(<%= raw @markers.to_json %>);
         handler.bounds.extendWith(markers);

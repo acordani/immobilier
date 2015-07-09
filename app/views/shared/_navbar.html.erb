@@ -48,10 +48,10 @@
           </li>
         <% else %>
           <li>
-            <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path %>
+            <%= link_to t(".sign_up", default: "S'inscrire"), new_user_registration_path, class: "white" %>
           </li>
           <li>
-            <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path %>
+            <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "white" %>
           </li>
         <% end %>
         <li>
