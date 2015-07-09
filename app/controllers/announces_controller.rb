@@ -29,7 +29,12 @@ class AnnouncesController < ApplicationController
 
   def show
     @announce = Announce.find(params[:id])
-    @announce_coordinates = { lat: @announce.latitude, lng: @announce.longitude }
+    # @announce_coordinates = { lat: @announce.latitude, lng: @announce.longitude }
+    @markers = Gmaps4rails.build_markers(@announce) do |announce, marker|
+      marker.lat announce.latitude
+      marker.lng announce.longitude
+      # marker.infowindow render_to_string(partial: "/announces/map_box", locals: { announce: announce })
+    end
 
 
     @similar_announces = Announce.where("locality ILIKE ?", "%#{@announce.locality}%").where("bed >= ?", "#{@announce.bed}").where.not(id: @announce)

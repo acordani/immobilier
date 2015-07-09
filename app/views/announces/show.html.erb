@@ -39,9 +39,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-lg-3 hidden-xs col-sm-5 mb-20">
+          <div id="map3" class="map_show">
 
-          <iframe width="200" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fr/maps/ms?ie=UTF8&amp;msa=0&amp;msid=101686375028251599401.0004484f73bea6145ef6b&amp;ll=<%=@announce.latitude%>,<%=@announce.longitude%>&amp;spn=0,0&amp;output=embed&amp;s=AARTsJqhzeyiqiLGEqDCDC7ar_q7Q1nmAw"></iframe>
-
+            <!-- <iframe width="200" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fr/maps/ms?ie=UTF8&amp;msa=0&amp;msid=101686375028251599401.0004484f73bea6145ef6b&amp;ll=<%=@announce.latitude%>,<%=@announce.longitude%>&amp;spn=0,0&amp;output=embed&amp;s=AARTsJqhzeyiqiLGEqDCDC7ar_q7Q1nmAw"></iframe> -->
+          </div>
         </div>
         <div class="col-md-4 col-lg-4">
           <p class="locality hidden-sm"><%=@announce.property.name%> - <%=@announce.bed%> chambre(s) - <%= @announce.bath%> salle(s) de bains</p>
@@ -254,13 +255,27 @@
 
 
 </div>
-  <% content_for(:after_js) do %>
-    <%= javascript_tag do %>
-      $(document).ready(function() {
-        var coord = <%= raw @announce_coordinates %>;
-        alert('Announce coordinates are ' + coord.lat + ', ' + coord.lng);
+ <% content_for(:after_js) do %>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDtSjv-fQlhRwNDSwMLdyfryCv2Sp5WSzA">
+  </script>
+
+
+
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map3' }
+      }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(15);
       });
-    <% end %>
+    })
   <% end %>
+<% end %>
+
 
 
