@@ -1,0 +1,14 @@
+<h1>Search Result</h1>
+<% if @search.search_announces.empty? %>
+  <p>No Records Found</p>
+
+<% else %>
+  <% @search.search_announces.each do |c| %>
+    <div>
+      <h1><%= c.locality %></h1>
+      <p>Price: $<%= c.price %></p>
+      <p>Bed: <%= c.bed %></p>
+
+    </div>
+  <% end %>
+<% end %>

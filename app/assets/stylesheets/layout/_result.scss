@@ -1,0 +1,49 @@
+.ui-slider-horizontal {
+  height: 0.2em;
+}
+
+
+#slider-range {
+  background: blue;
+  border: 1px;
+  width: 80%;
+}
+
+.ui-slider-handle {
+  background: #32B796;
+  border: 1px solid #32B796;
+  border-radius: 30%;
+  &:focus {
+    outline: none;
+  }
+}
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1em;
+  height: 1em;
+  cursor: default;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+
+.ui-slider-range {
+  background: #32B796;
+  border: #32B796;
+
+}
+
+#minValue {
+  padding-top: 20px;
+  font-size:20px;
+}
+
+#maxValue {
+
+  padding-top: 20px;
+  position: relative;
+  right: 75px;
+  font-size:20px;
+
+}

@@ -1,0 +1,22 @@
+<h1>Advanced Search</h1>
+
+
+
+
+
+<%= simple_form_for @search do |f| %>
+
+
+      <%= f.input :locality %>
+      <%= f.input :bed %>
+      <%= f.input :min_price %>
+      <%= f.input :max_price %>
+
+      <%= f.submit %>
+      <% end %>
+
+<% content_for(:after_js) do %>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDtSjv-fQlhRwNDSwMLdyfryCv2Sp5WSzA">
+  </script>
+  <% end %>
