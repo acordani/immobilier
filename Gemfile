@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+source 'https://rails-assets.org'
 
 ruby "2.2.2"
 
@@ -7,7 +8,7 @@ gem "pg"
 gem "figaro"
 gem "simple_form"
 gem "country_select"
-gem "high_voltage"
+# gem "high_voltage"
 gem "devise"
 gem 'omniauth-facebook'
 # gem "pundit"
@@ -22,6 +23,7 @@ gem "font-awesome-sass"
 
 gem "geocoder"
 gem "gmaps4rails"
+gem "rails-assets-underscore"
 # gem "rails-assets-underscore"
 gem 'underscore-rails', '~> 1.8.3'
 

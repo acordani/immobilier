@@ -34,6 +34,12 @@
     </div>
   </div>
 </div>
+<div class="line-separator"> </div>
+<div class="map">
+<%= link_to "Ouvrir la carte", new_account_announce_path, class:"btn mt-20 btn-map" %>
+  <div id="map_small"></div>
+
+</div>
 <div class="container">
   <div class="row">
     <div class="announces mt-50">
@@ -68,6 +74,27 @@
   </div>
 
 </div>
+
+<% content_for(:after_js) do %>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDtSjv-fQlhRwNDSwMLdyfryCv2Sp5WSzA">
+  </script>
+
+
+
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map_small' },  provider: { zoom: 15,styles: mapStyle }
+      }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    })
+  <% end %>
+<% end %>
 
 
 

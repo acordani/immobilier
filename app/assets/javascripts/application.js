@@ -6,6 +6,7 @@
 //= require gmaps/google
 //= require bootstrap-filestyle
 //= require navbar
+//= require snazzymap
 //= require_tree .
 //= require_tree ./app
 
