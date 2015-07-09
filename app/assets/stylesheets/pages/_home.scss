@@ -81,8 +81,17 @@ input[type="text"] {
   }
 }
 
-#map_small {
+.map_small {
   min-height:140px;
+  width:100%;
+  position:relative;
+  z-index:0;
+}
+
+
+
+.map_tall {
+  min-height:400px;
   width:100%;
   position:relative;
   z-index:0;
@@ -96,3 +105,4 @@ background-color: #f00;
 height: 5px;
 
 }
+

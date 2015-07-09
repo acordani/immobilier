@@ -36,9 +36,9 @@
 </div>
 <div class="line-separator"> </div>
 <div class="map">
-<%= link_to "Ouvrir la carte", new_account_announce_path, class:"btn mt-20 btn-map" %>
-  <div id="map_small"></div>
-
+  <p class="btn mt-20 btn-map ouvre"> Ouvrir la carte </p>
+  <!-- <p class="btn mt-20 btn-map ferme"> Fermer la carte </p> -->
+  <div id="map2"class="map_small"></div>
 </div>
 <div class="container">
   <div class="row">
@@ -86,7 +86,7 @@
     $(document).on('ready', function() {
 
       handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map_small' },  provider: { zoom: 15,styles: mapStyle }
+      handler.buildMap({ internal: { id: 'map2' },  provider: { styles: mapStyle }
       }, function(){
         markers = handler.addMarkers(<%= raw @markers.to_json %>);
         handler.bounds.extendWith(markers);

@@ -7,6 +7,7 @@
 //= require bootstrap-filestyle
 //= require navbar
 //= require snazzymap
+//= require map
 //= require_tree .
 //= require_tree ./app
 
