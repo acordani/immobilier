@@ -8,6 +8,7 @@
 //= require navbar
 //= require snazzymap
 //= require map
+//= require alert
 //= require_tree .
 //= require_tree ./app
 
