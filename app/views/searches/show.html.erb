@@ -5,6 +5,7 @@
 <% else %>
   <% @search.search_announces.each do |c| %>
     <div>
+
       <h1><%= c.locality %></h1>
       <p>Price: $<%= c.price %></p>
       <p>Bed: <%= c.bed %></p>

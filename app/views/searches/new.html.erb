@@ -7,7 +7,8 @@
 <%= simple_form_for @search do |f| %>
 
 
-      <%= f.input :locality %>
+     <!--  <%= f.input :locality %> -->
+      <%= f.input :locality, input_html: {id: "user_input_autocomplete_address"}, label: 'Addresse de la boutique', placeholder:'25, rue du Petit Musc' %>
       <%= f.input :bed %>
       <%= f.input :min_price %>
       <%= f.input :max_price %>

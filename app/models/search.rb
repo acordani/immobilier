@@ -14,9 +14,11 @@
 
 class Search < ActiveRecord::Base
 
+
+
   def search_announces
     announces = Announce.all
-     announces = announces.where("locality ILIKE ?", "%#{locality}%") if locality.present?
+     announces = announces.where("locality like ?", "%#{locality.chomp(", France")}%") if locality.present?
      announces = announces.where("bed >= ?", bed) if bed.present?
      announces = announces.where("price >= ?", min_price) if min_price.present?
      announces = announces.where("price <= ?", max_price) if max_price.present?
