@@ -6,7 +6,11 @@ class SearchesController < ApplicationController
 end
 def create
   @search = Search.create(search_params)
-  redirect_to @search
+    respond_to do |format|
+      format.html { redirect_to @search }
+      format.js
+    end
+
 end
 def show
   @search = Search.find(params[:id])
