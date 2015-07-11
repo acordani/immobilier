@@ -7,6 +7,7 @@
   padding: 12px;
   font-size: 13px;
   font-weight: 300;
+  min-height:178px;
 
   a {
     font-size:10px;
@@ -19,9 +20,17 @@
     margin-top: 0;
   }
 
-  title {
+  .title {
     text-transform:uppercase;
+    padding-top: 4px;
 
+
+  }
+
+  .price {
+    color: #72B695;
+    font-weight: 600;
+    font-size: 11px;
   }
 
   img {

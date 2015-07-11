@@ -8,7 +8,7 @@
           <% pictures << @announce.picture1 << @announce.picture2 << @announce.picture3 << @announce.picture4 %>
         <% else @announce.picture1.exists? %>
           <div class="col-md-4 col-md-offset-4 col-lg-4 col-md-offset-4">
-            <%= image_tag @announce.picture1.url(:medium) %>
+            <%= image_tag @announce.picture1.url(:medium), class: "img_full" %>
           </div>
 
 

@@ -9,15 +9,33 @@
 
 
 puts "Deleting old records..."
-Property.destroy_all
+# Property.destroy_all
+Announce.destroy_all
 
-puts "Creating property..."
-Property.create(name: "Appartement")
-Property.create(name: "Maison")
-Property.create(name: "Local Commercial")
+# puts "Creating property..."
+# Property.create(name: "Appartement")
+# Property.create(name: "Maison")
+# Property.create(name: "Local Commercial")
 
 
-# puts "Creating Announces"
+puts "Creating Announces"
+
+
+announce1 = Announce.new
+  announce1.title = "Belle maison"
+  announce1.price = 354000
+  announce1.bed = 3
+  announce1.bath = 1
+  announce1.surface = 120
+  announce1.construction = 1930
+  announce1.property_id = 20
+  announce1.description = "Belle Maison sur Maisons-Alfort"
+  announce1.address = "98 Avenue du Général Leclerc, Maisons-Alfort, France"
+  announce1.locality = "Maisons-Alfort"
+  announce1.class_energy = "D"
+  announce1.picture1 = File.open(Rails.root.join("app/assets/images/1.jpg"))
+  announce1.save
+
 # Announce.create(title: "Belle Maison", bed: 3, bath: 1, surface: 120, construction: 1930, property_id: 1, description: "Belle Maison sur Maisons-Alfort", address: "98 Avenue du Général Leclerc, Maisons-Alfort, France", locality: "Maisons-Alfort", latitude: 48.8029551, longitude: 2.4417096, picture1:"http://lorempixel.com/640/480/city/1/")
 
 
