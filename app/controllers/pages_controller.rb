@@ -7,6 +7,13 @@ class PagesController < ApplicationController
 
     @announces = Announce.all
 
+    # latitude = params[:lat]
+    # longitude = params[:lng]
+
+    # if latitude && longitude
+    #   @announces = @announces.near([latitude, longitude], 5, units: :km)
+    # end
+
     # Let's DYNAMICALLY build the markers for the view.
     @markers = Gmaps4rails.build_markers(@announces) do |announce, marker|
       marker.lat announce.latitude
