@@ -1,0 +1,12 @@
+<% if announce.picture1.exists? %>
+    <%= image_tag(announce.picture1.url(:medium), alt: "Flat Picture", class: "cart") %>
+  <% else %>
+    <%= image_tag('no_photo.png', class: "no_photo") %>
+  <% end %>
+  <div class="cart_content">
+  <p><%= announce.locality %></p>
+  <p><%= announce.property.name %></p>
+  <p><%= announce.price %> €</p>
+  </div>
+
+  <%= link_to "+", announce_path(announce), class: "btn_search" %>
