@@ -1,12 +1,7 @@
-<h1>Advanced Search</h1>
-
-
-
-
 <%= simple_form_for @search do |f| %>
 
 
-     <!--  <%= f.input :locality %> -->
+
       <%= f.input :locality, input_html: {id: "user_input_autocomplete_address"}, label: 'Ville Recherchée', placeholder:'Paris' %>
       <%= f.input :bed %>
       <%= f.input :min_price %>
@@ -14,12 +9,3 @@
 
       <%= f.submit %>
       <% end %>
-
-
-
-<% content_for(:after_js) do %>
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDtSjv-fQlhRwNDSwMLdyfryCv2Sp5WSzA">
-  </script>
-  <% end %>
-
