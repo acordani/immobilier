@@ -8,7 +8,7 @@
   <div class="container">
     <!-- div correspondant à la carte -->
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-5 hidden-xs hidden-sm">
         <div class="box-shadow" id="map_index"></div>
       </div>
 
@@ -50,12 +50,10 @@
 <% content_for(:after_js) do %>
 
 
-
-
   <%= javascript_tag do %>
     $(document).on('ready', function() {
 
-      handler = Gmaps.build('Google');
+      handler = Gmaps.build('Google', { markers: { maxRandomDistance: 100 , clusterer: {gridSize: 35, maxZoom: 20} } });
       handler.buildMap({ internal: { id: 'map_index' },  provider: { styles: mapStyle}
       }, function(){
         markers = handler.addMarkers(<%= raw @markers.to_json %>);
