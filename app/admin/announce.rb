@@ -12,7 +12,7 @@ ActiveAdmin.register Announce do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-permit_params :title, :bed, :bath, :surface, :construction, :class_energy, :description, :tax_month, :price, :address, :locality
+permit_params :title, :property_id, :bed, :bath, :surface, :construction, :class_energy, :description, :tax_month, :price, :address, :locality
 
 end
 

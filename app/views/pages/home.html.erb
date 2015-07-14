@@ -77,16 +77,14 @@
 </div>
 
 <% content_for(:after_js) do %>
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDtSjv-fQlhRwNDSwMLdyfryCv2Sp5WSzA">
-  </script>
+
 
 
 
   <%= javascript_tag do %>
     $(document).on('ready', function() {
 
-      handler = Gmaps.build('Google');
+      handler = Gmaps.build('Google', { markers: { maxRandomDistance: 100 , clusterer: {gridSize: 45, maxZoom: 20} } });
       handler.buildMap({ internal: { id: 'map2' },  provider: { styles: mapStyle}
       }, function(){
         markers = handler.addMarkers(<%= raw @markers.to_json %>);
