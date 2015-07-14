@@ -36,6 +36,36 @@ announce1 = Announce.new
   announce1.picture1 = File.open(Rails.root.join("app/assets/images/1.jpg"))
   announce1.save
 
+  announce2 = Announce.new
+  announce2.title = "Belle maison"
+  announce2.price = 500000
+  announce2.bed = 3
+  announce2.bath = 2
+  announce2.surface = 220
+  announce2.construction = 1950
+  announce2.property_id = 20
+  announce2.description = "Belle Maison sur Maisons-Alfort"
+  announce2.address = "78 Avenue du Général Leclerc, Maisons-Alfort, France"
+  announce2.locality = "Maisons-Alfort"
+  announce2.class_energy = "E"
+  announce2.picture1 = File.open(Rails.root.join("app/assets/images/2.jpg"))
+  announce2.save
+
+  announce3 = Announce.new
+  announce3.title = "Belle maison"
+  announce3.price = 500000
+  announce3.bed = 3
+  announce3.bath = 3
+  announce3.surface = 330
+  announce3.construction = 1950
+  announce3.property_id = 20
+  announce3.description = "Belle Maison sur Maisons-Alfort"
+  announce3.address = "78 Avenue du Général Leclerc, Maisons-Alfort, France"
+  announce3.locality = "Maisons-Alfort"
+  announce3.class_energy = "E"
+  announce3.picture1 = File.open(Rails.root.join("app/assets/images/3.jpg"))
+  announce3.save
+
 # Announce.create(title: "Belle Maison", bed: 3, bath: 1, surface: 120, construction: 1930, property_id: 1, description: "Belle Maison sur Maisons-Alfort", address: "98 Avenue du Général Leclerc, Maisons-Alfort, France", locality: "Maisons-Alfort", latitude: 48.8029551, longitude: 2.4417096, picture1:"http://lorempixel.com/640/480/city/1/")
 
 

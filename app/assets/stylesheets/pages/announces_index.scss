@@ -1,5 +1,12 @@
 .announces_index_html {
 
+  html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
   .logo {
     color:#3B5675;
   }
@@ -20,6 +27,29 @@
     box-shadow: 0 0 3px #bfbfbf;
   }
 
+
+  .sidebar {
+  position: absolute;
+  width: 100%;
+  top:0;
+  min-height:500px;
+  right: 0;
+  bottom:0;
+
+  overflow: auto;
+  padding: 15px;
+  }
+
+  .box-shadow {
+
+    min-height:500px;
+    width:100%;
+    position:absolute;
+    top:13px;
+    bottom:0;
+    z-index:0;
+    overflow: auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
