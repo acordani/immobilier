@@ -1,0 +1,49 @@
+<div class="filter">
+  <%= form_tag announces_path, method: :get, class: "form-inline" do %>
+
+    <div class="row">
+      <div class="col-md-4">
+        <%= label_tag "Price" %>
+      </div>
+      <div class="col-md-2">
+        <%= label_tag :bedrooms %>
+      </div>
+      <div class="col-md-2">
+        <%= label_tag :bathrooms %>
+      </div>
+      <div class="col-md-4">
+        <%= label_tag :locality %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <%= text_field_tag :min_price, params[:min_price], placeholder: "minimum", class: "form-control input-sm" %>
+        <%= text_field_tag :max_price, params[:max_price], placeholder: "maximum", class: "form-control input-sm" %>
+      </div>
+      <div class="col-md-2">
+        <%= text_field_tag :bed, params[:bed], placeholder: "# of beds", class: "form-control input-sm" %>
+      </div>
+      <div class="col-md-2">
+        <%= text_field_tag :bath, params[:bath], placeholder: "# of baths", class: "form-control input-sm" %>
+      </div>
+      <div class="col-md-4">
+        <%= text_field_tag :locality, params[:locality], placeholder: "locality", id: 'user_input_autocomplete_address', class: "form-control input-sm" %>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <%= label_tag "Square Footage" %>
+      </div>
+    </div>
+
+
+      <div class="col-md-2">
+        <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

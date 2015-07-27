@@ -107,4 +107,12 @@ class Announce < ActiveRecord::Base
 
   validates_attachment_content_type :picture4, content_type: /\Aimage\/.*\z/
   validates_attachment_size :picture4, less_than: 5.megabytes
+
+#   def self.search(search)
+#     if search
+#     where( "locality ILIKE ?", "%#{locality}%")
+#   else
+#     all
+#   end
+# end
 end
