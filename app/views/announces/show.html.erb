@@ -119,17 +119,19 @@
           <div role="tabpanel">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" id="dashboard_products" role="tablist">
-              <li role="presentation" class="active"><a href="#description" aria-controls="home" role="tab" data-toggle="tab"><h5> Description</h5></a></li>
+              <li role="presentation" class="hidden-xs"><a href="#description" aria-controls="home" role="tab" data-toggle="tab"><h5> Description</h5></a></li>
               <% if @announce.class_energy.present? %>
-                <li role="presentation"><a href="#dpe" aria-controls="profile" role="tab" data-toggle="tab"><h5> Diagnostic Energie</h5></a></li>
+                <li role="presentation" ><a href="#dpe" aria-controls="profile" role="tab" data-toggle="tab"><h5> Diagnostic Energie</h5></a></li>
               <% end %>
-              <li role="presentation"><a href="#fiche" aria-controls="home" role="tab" data-toggle="tab"><h5> Fiche technique</h5></a></li>
+              <li role="presentation" class="active"><a href="#fiche" aria-controls="home" role="tab" data-toggle="tab"><h5> Fiche technique</h5></a></li>
             </ul>
           </div>
           <!-- Tab panes -->
           <div class="tab-content mt-20">
-            <div role="tabpanel" class="tab-pane active" id="description">
-              <%=  @announce.description %>
+            <div role="tabpanel" class="tab-pane hidden-xs" id="description">
+              <div class="col-md-12">
+                <%=  @announce.description %>
+              </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="dpe">
               <div class="col-md-6 col-md-offset-3">
@@ -173,7 +175,7 @@
                 <% end %>
               </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="fiche">
+            <div role="tabpanel" class="tab-pane active" id="fiche">
               <div class="table-responsive space-bottom-30 space-top-30">
                 <table class="table table-striped">
                   <tbody>

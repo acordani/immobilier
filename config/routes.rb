@@ -6,9 +6,12 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :searches
+  # resources :searches
 
-  resources :announces, only: [:index, :show]
+  resources :announces, only: [:index, :show] do
+    post :searches
+  end
+
 
 
   namespace :account do

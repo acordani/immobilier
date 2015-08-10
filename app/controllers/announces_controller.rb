@@ -10,15 +10,16 @@ class AnnouncesController < ApplicationController
     # end
 
       # @announces = Announce.near(params[:locality].capitalize, 20)
-    if params[:locality] != nil && params[:locality] != ""
-      @announces= Announce.where( "locality ILIKE ?", "%#{params[:locality].chomp(', France')}%")
-      @announces = @announces.where("bed >= ?", params["bed"]) if params["bed"].present?
-      @announces = @announces.where("price >= ?", params["min_price"]) if params["min_price"].present?
-      @announces = @announces.where("price <= ?", params["max_price"]) if params["max_price"].present?
-    else
-      @announces = Announce.all
-    end
 
+    # if params[:locality] != nil && params[:locality] != ""
+    #   @announces= Announce.where( "locality ILIKE ?", "%#{params[:locality].chomp(', France')}%")
+    #   @announces = @announces.where("bed >= ?", params["bed"]) if params["bed"].present?
+    #   @announces = @announces.where("price >= ?", params["min_price"]) if params["min_price"].present?
+    #   @announces = @announces.where("price <= ?", params["max_price"]) if params["max_price"].present?
+    # else
+    #   @announces = Announce.all
+    # end
+    announces.searches
 
     # @announces = @announces.where( "locality ILIKE ?", "%#{params[:locality]}%") if params["locality"].present?
     # @announces = @announces.where(bed: params["bed"]) if params["bed"].present?
@@ -52,6 +53,16 @@ class AnnouncesController < ApplicationController
 
   end
 
+  def searches
+    if params[:locality] != nil && params[:locality] != ""
+      @announces= Announce.where( "locality ILIKE ?", "%#{params[:locality].chomp(', France')}%")
+      @announces = @announces.where("bed >= ?", params["bed"]) if params["bed"].present?
+      @announces = @announces.where("price >= ?", params["min_price"]) if params["min_price"].present?
+      @announces = @announces.where("price <= ?", params["max_price"]) if params["max_price"].present?
+    else
+      @announces = Announce.all
+    end
+  end
 
 
 
