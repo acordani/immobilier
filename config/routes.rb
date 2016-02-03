@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   # resources :searches
 
-  resources :announces, only: [:index, :show] do
-    post :searches
-  end
+  resources :announces, only: [:index, :show]
+
+
 
 
 
