@@ -40,7 +40,7 @@ $navbar-profile-border-width: 2px;
  * SCSS code
  * ------------------------------------- */
 .navbar-wagon {
-  background: transparent;
+  background: rgba(39,143,117,0.5);
   color: #3B5675;
   font-family: $navbar-font-family;
   border: none;
@@ -154,6 +154,7 @@ $navbar-profile-border-width: 2px;
 .logo {
   font-size: 22px !important;
   color:white;
+  margin-top:13px
 }
 
 /* -------------------------------------
