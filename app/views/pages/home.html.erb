@@ -91,7 +91,7 @@
   <%= javascript_tag do %>
     $(document).on('ready', function() {
 
-      handler = Gmaps.build('Google', { markers: { maxRandomDistance: 100 , clusterer: {gridSize: 45, maxZoom: 20} } });
+      handler = Gmaps.build('Google');
       handler.buildMap({ internal: { id: 'map2' },  provider: { styles: mapStyle}
       }, function(){
         markers = handler.addMarkers(<%= raw @markers.to_json %>);
