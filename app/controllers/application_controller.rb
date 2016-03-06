@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  helper_method :resource_name, :resource, :devise_mapping
+
   # before_action :authenticate_user!, unless: :pages_controller?
 
   # after_action :verify_authorized, except:  :index, unless: :devise_or_pages_controller?
