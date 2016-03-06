@@ -36,6 +36,8 @@ gem "devise-i18n"
 gem "devise-i18n-views"
 
 
+
+
 gem 'coffee-rails', '~> 4.1.0'
 
 group :development, :test do

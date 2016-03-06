@@ -68,6 +68,9 @@ class Announce < ActiveRecord::Base
   belongs_to :user
   belongs_to :property
 
+  has_many :hearts, dependent: :destroy
+  has_many :users, through: :hearts
+
   validates :title, presence: true
   validates :property_id, presence: true
   validates :description, presence: true

@@ -27,6 +27,9 @@
       <div class="col-md-6 col-lg-6 col-sm-6">
         <p class="titre"><%= @announce.title.capitalize %></p>
         <p class="locality"><%= @announce.locality %></p>
+        <%= div_for @announce do %>
+            <%= render "hearts/button", locals: { announce: @announce } %>
+          <% end %>
       </div>
     </div>
     <div class="row">
@@ -46,6 +49,8 @@
         </div>
         <div class="col-md-4 col-lg-4">
           <p class="locality hidden-sm"><%=@announce.property.name%> - <%=@announce.bed%> chambre(s) - <%= @announce.bath%> salle(s) de bains</p>
+
+
 
 
           <p class="detail-description hidden-sm"><%=@announce.description %></p>

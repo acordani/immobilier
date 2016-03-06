@@ -10,6 +10,7 @@
 //= require map
 //= require arround_me
 
+
 //= require alert
 //= require_tree .
 //= require_tree ./app

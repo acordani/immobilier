@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
 
   has_many :announces
   has_many :searches
+  has_many :hearts, dependent: :destroy
+  has_many :announces, through: :hearts
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -50,5 +54,21 @@ class User < ActiveRecord::Base
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
+  end
+
+  # creates a new heart row with post_id and user_id
+  def heart!(announce)
+    self.hearts.create!(announce_id: announce.id)
+  end
+
+  # destroys a heart with matching announce_id and user_id
+  def unheart!(announce)
+    heart = self.hearts.find_by_announce_id(announce.id)
+    heart.destroy!
+  end
+
+  # returns true of false if a announce is hearted by user
+  def heart?(announce)
+    self.hearts.find_by_announce_id(announce.id)
   end
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   ActiveAdmin.routes(self)
 
   root to: 'pages#home'
@@ -8,10 +10,14 @@ Rails.application.routes.draw do
 
   # resources :searches
 
-  resources :announces, only: [:index, :show]
+  resources :announces, only: [:index, :show] do
+    resources :hearts
+  end
 
 
+  match 'heart', to: 'hearts#heart', via: :post
 
+  match 'unheart', to: 'hearts#unheart', via: :delete
 
 
   namespace :account do
