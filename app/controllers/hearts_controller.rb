@@ -2,7 +2,7 @@ class HeartsController < ApplicationController
 
 
 def index
-  @hearts = Heart.all
+  @hearts = current_user.hearts
 end
 
 respond_to :js

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :hearts
   end
 
+  resources :hearts
 
   match 'heart', to: 'hearts#heart', via: :post
 
