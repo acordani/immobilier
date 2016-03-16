@@ -1,5 +1,6 @@
 <% if current_user.heart?(@announce) %>
-  <%= button_to "Je n'aime plus", unheart_path(announce_id: @announce.id), remote: true, method: :delete  %>
+  <%= button_to "Je n'aime plus", unheart_path(announce_id: @announce.id), remote: true, method: :delete %>
+
 <% else %>
   <%= button_to "J'aime", heart_path(announce_id: @announce.id), remote: true  %>
 <% end %>
