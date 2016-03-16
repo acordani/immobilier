@@ -2,6 +2,7 @@
   <%= render 'form' %>
 </div>
 
-<script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCagXClqmRPr2pEgvjN6GD_QcJmS5i27ZY">
+<% content_for(:after_js) do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCagXClqmRPr2pEgvjN6GD_QcJmS5i27ZY">
   </script>
+<% end %>
