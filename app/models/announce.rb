@@ -72,7 +72,7 @@ class Announce < ActiveRecord::Base
   has_many :users, through: :hearts
 
   validates :title, presence: true
-  validates :property_id, presence: true
+  # validates :property_id, presence: true
   validates :description, presence: true
  # Géocode
 
